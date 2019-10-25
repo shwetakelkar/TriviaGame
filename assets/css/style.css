@@ -7,6 +7,7 @@ h1{
     
 }
 body{
+    font-family: Arial, Helvetica, sans-serif;
       background-image: url("../images/forrest-gump-bench.jpg"); 
 }
 a,li{
@@ -14,12 +15,15 @@ a,li{
     color: black;
     text-align: left;
     text-decoration-line: none;
-    font-weight: bold;
+    font-weight:400px;
 }
 a:hover{
     
-        color:blue;
-      
+        border:2px solid blue;
+        background-color: lightskyblue;
+        display: block;
+        min-width:350px;
+        text-align: center;       
 }
 li{
     
@@ -43,13 +47,19 @@ div{
 
     width: 500px;    
     height: 60px;
-    background: lightgrey;
+    background:lightskyblue;
     font-size: 50px;
     display: flex;
     margin: 5% auto;
     justify-content: center;
     font-weight: bold;
+    border: 2px solid blue;
 
+}
+#buttonId:hover
+{
+    color:blue;
+    border: 1px solid black;
 }
 p,#timer,#quetionId,h1,h3{
     text-align: center;
