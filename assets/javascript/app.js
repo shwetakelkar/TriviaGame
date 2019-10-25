@@ -91,7 +91,7 @@ $(document).ready(function() {
     var inCorrect = 0;
     var correctAnswer="";
     var imgSrc ="";
-    var i = 0;
+    var counter = 0;
     var intervalId,intervalTimerId;
 /*------------------------------------------
 This event call when 'start' and 'start over'
@@ -117,7 +117,7 @@ clicked.and give the user choice.
     
 /*
 ----------------------------------------
- this function rander new set of question
+ this function rander the new set of question
  and answer with DOM changes with some
   dynamic html elements.
  it also update the value count 'i'
@@ -135,21 +135,21 @@ function newquestionAnswerPageCall() {
     $("#quetionId").empty();
     $("#timer").empty();
     
-    if(i === (objArray.length))
+    if(counter === (objArray.length))
     {
         stop();
         $("#timer").html("<h4>All done, heres how you did</h4><br> Correct Answers: "+ correct +"<br> Incorrect Answers : "+ inCorrect +"<br> Unanswered: "+unAnswered);
         $("#buttonId").show();
         $("#buttonId").text("start over?");
-        i = 0,correct =0, inCorrect=0, unAnswered=0;
+        counter = 0,correct =0, inCorrect=0, unAnswered=0;
 
     }else{
         
         runTimer();
         
-        var question = objArray[i].question;
-        var options = objArray[i].options;
-        imgSrc = objArray[i].image;
+        var question = objArray[counter].question;
+        var options = objArray[counter].options;
+        imgSrc = objArray[counter].image;
 
         $("#headerId").append("<br><br>");
     
@@ -179,7 +179,7 @@ function newquestionAnswerPageCall() {
             listElement.appendTo($('#optionsDiv'));
                 
         }
-        i++;
+        counter++;
     }
 }
 /*-----------------------------------------
