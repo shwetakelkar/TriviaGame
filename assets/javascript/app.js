@@ -4,7 +4,7 @@ $(document).ready(function() {
         {
         question:"Finish the quote. 'Life is like a box of_______.",
         options:[
-            ["Chocolate", true], 
+            ["chocolate", true], 
             ["fruit", false],
             ["suprise",false],
             ["fun", false]
@@ -16,7 +16,7 @@ $(document).ready(function() {
         question:"What was the name of the shrimping business?",
         options:[
             ["Gump bubba shrimp company",false],
-            ["Bubba gump Shrimp company",true],
+            ["Bubba gump shrimp company",true],
             ["Bubba gump fish company",false],
             ["Bubba gump prawn company",false]
         ],
@@ -135,13 +135,13 @@ function newquestionAnswerPageCall() {
     $("#quetionId").empty();
     $("#timer").empty();
     
-    if(i === (objArray.length-1))
+    if(i === (objArray.length))
     {
         stop();
-        $("#timer").html("<h4>All done, heres how you did</h4><br> Correct : "+ correct +"<br> Incorrect : "+inCorrect+"<br> Unanswered: "+unAnswered);
+        $("#timer").html("<h4>All done, heres how you did</h4><br> Correct Answers: "+ correct +"<br> Incorrect Answers : "+ inCorrect +"<br> Unanswered: "+unAnswered);
         $("#buttonId").show();
         $("#buttonId").text("start over?");
-        i = 0;
+        i = 0,correct =0, inCorrect=0, unAnswered=0;
 
     }else{
         
@@ -239,7 +239,7 @@ function resultFunction(userChoice) {
             inCorrect++;
         }
 
-        $("<p>").text("The correct answer is " + correctAnswer).appendTo("#optionsDiv");
+        $("<p>").text("The correct answer was:  " + correctAnswer).appendTo("#optionsDiv");
         
     }
     var imageElement = $("<img>");
